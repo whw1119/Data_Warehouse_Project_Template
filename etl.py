@@ -5,7 +5,7 @@ from sql_queries import copy_table_queries, insert_table_queries
 
 def load_staging_tables(cur, conn):
     """
-    load S3 data into staging tables on Redshift.
+    load S3 data into staging tables on Redshift
 
     Args:
         cur: cursor object
@@ -18,7 +18,7 @@ def load_staging_tables(cur, conn):
 
 def insert_tables(cur, conn):
     """
-    load data from staging tables to dimension and fact tables on Redshift.
+    load data from staging tables to dimension and fact tables on Redshift
 
     Args:
         cur: cursor object
@@ -31,7 +31,7 @@ def insert_tables(cur, conn):
 
 def main():
     """
-    load data from S3 into staging tables on Redshift and then process that data into the analytics tables on Redshift.
+    load data from S3 into staging tables on Redshift and then process that data into the analytics tables on Redshift
     """
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
