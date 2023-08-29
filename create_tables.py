@@ -31,7 +31,7 @@ def create_tables(cur, conn):
 
 def main():
     """
-    create the fact and dimension tables for the star schema on Redshift.
+    create the staging, fact and dimension tables for the star schema on Redshift.
     drop the tables if exists already.
     """
     config = configparser.ConfigParser()
