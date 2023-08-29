@@ -18,5 +18,18 @@ Contains SQL queries used by `create_tables.py` and `etl.py`.
 ### dwh.cfg
 Contains configuration data needed to connect to S3 and redshift database.
 
+## Database Schema Design
+A star schema is created for queries on song play analysis. This includes the following tables.
+### Staging tables
+ - song_data - song and artist data recorded in json file 
+ - log_data - event data recorded in json file
+### Fact Table
+ - songplays - records in event data associated with song plays i.e. records with page NextSong
+### Dimension Tables
+ - users - users in the app
+ - songs - songs in music database
+ - artists - artists in music database
+ - time - timestamps of records in songplays broken down into specific units
+
 ## How to Run
 First run `create_tables.py` an then run `etl.py`.
