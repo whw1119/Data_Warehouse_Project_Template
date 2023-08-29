@@ -19,4 +19,4 @@ Contains SQL queries used by `create_tables.py` and `etl.py`.
 Contains configuration data needed to connect to S3 and redshift database.
 
 ## How to Run
-First run 'create_tables.py' an then 'run etl.py'.
+First run `create_tables.py` an then run `etl.py`.
