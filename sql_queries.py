@@ -61,8 +61,8 @@ CREATE TABLE "songplays" (
   start_time    TIMESTAMP,
   user_id       INT,
   level         TEXT,
-  song_id       INT,
-  artist_id     INT,
+  song_id       TEXT,
+  artist_id     TEXT,
   session_id    INT,
   location      TEXT,
   user_agent    TEXT
@@ -83,7 +83,7 @@ song_table_create = ("""
 CREATE TABLE "songs" (
   song_id       TEXT PRIMARY KEY,
   title         TEXT,
-  artist_id     INT,
+  artist_id     TEXT,
   year          INT,
   duration      DOUBLE PRECISION
 )
@@ -130,7 +130,6 @@ staging_songs_copy = ("""
     credentials 'aws_iam_role={}'
     region 'us-west-2'
     json 'auto'
-    TRUNCATECOLUMNS;
 """).format(table_song_data, DWH_ROLE_ARN)
   # ACCEPTINVCHARS
   # TRUNCATECOLUMNS
