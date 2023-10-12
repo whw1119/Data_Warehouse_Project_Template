@@ -95,7 +95,7 @@ CREATE TABLE "artists" (
   name          TEXT,
   location      TEXT,
   lattitude     TEXT,
-  longitude     TEXT,
+  longitude     TEXT
 )
 """)
 
@@ -107,7 +107,7 @@ CREATE TABLE "time" (
   week          INT,
   month         INT,
   year          INT,
-  weekday       INT,
+  weekday       INT
 )
 """)
 
@@ -129,7 +129,8 @@ staging_songs_copy = ("""
     copy staging_songs from {}
     credentials 'aws_iam_role={}'
     region 'us-west-2'
-    json 'auto';
+    json 'auto'
+    TRUNCATECOLUMNS;
 """).format(table_song_data, DWH_ROLE_ARN)
   # ACCEPTINVCHARS
   # TRUNCATECOLUMNS
